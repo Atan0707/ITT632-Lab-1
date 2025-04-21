@@ -8,14 +8,20 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a7ea4"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#0a7ea4"
+      },
+      "package": "com.anonymous.lab1ict632"
     },
     "web": {
       "bundler": "metro",
@@ -30,12 +36,13 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#0a7ea4"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "description": "A modern news app that displays Malaysian news headlines and categories."
   }
 }
