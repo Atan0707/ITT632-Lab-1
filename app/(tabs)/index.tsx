@@ -4,8 +4,23 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useEffect } from 'react';
 
 export default function HomeScreen() {
+  const privateKey = process.env.EXPO_PUBLIC_NEWS_API_KEY;
+
+  useEffect(() => {
+    const fetchData = async () =>{
+      try {
+        const response = await fetch(`https://newsapi.org/v2/everything?q=bitcoin&apiKey=${privateKey}`);
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    fetchData();
+  }, []);
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
